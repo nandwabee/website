@@ -1,44 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bernard Nandwa</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#1a237e">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+        <!-- Styles -->
+        <link href="/css/app.css" rel="stylesheet">
+        <title>Bernard Nandwa - Web Developer</title>
     </head>
-    <body>
+    <body class="grey darken-4" id="frontpage">
         <div class="container">
-            <div class="content">
-                <div class="title">Bernard Nandwa</div>
+            <div class="row welcome-row">
+                <div class="title white-text">Bernard Nandwa</div>
+                <div class="white-text welcome-text">
+                    <p>Full stack developer.Somewhere in Nairobi.</p>
+                </div>
             </div>
         </div>
     </body>

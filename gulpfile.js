@@ -13,4 +13,20 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
+
+    mix.scripts(
+        [
+            'vendor/jquery.min.js',
+            'vendor/materialize.min.js',
+            'vendor/angular-1.4.min.js',
+            'vendor/angular-ui-router.min.js',
+            'vendor/angucomplete-alt.min.js',
+            'vendor/moment.js',
+            'vendor/lodash.js',
+            'frontend/app.js',
+            'frontend/factory/**/*.js',
+            'frontend/components/**/*.js'
+        ],
+        'public/js/frontend.js'
+    );
 });
