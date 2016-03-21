@@ -8,7 +8,8 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
-        <title>Bernard Nandwa - Web Developer</title>
+        <title>Bernard Nandwa - Full Stack Developer</title>
+        {!! Analytics::render() !!}
     </head>
     <body class="grey darken-4" id="frontpage">
         <div class="container">
