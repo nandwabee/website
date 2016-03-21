@@ -1,7 +1,38 @@
 .welcome-row{
-  margin-top:160px;
+  padding-top: 160px;
+  min-height: 500px;
   .title{
     font-size: 60px;
     font-weight: 200;
+  }
+}
+#hire-me{
+  h5{
+    margin-bottom: 35px !important;
+    font-size: 2.84rem ;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+  .budget-field{
+    margin-top: 10px;
+    margin-bottom: 30px !important;
+    select{
+      margin-top: 15px;
+    }
+  }
+  .input-field{
+    margin-bottom: 15px;
+  }
+  @media (max-width: 568px) {
+    .row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .col{
+      padding: 0;
+    }
+  }
+  .email-button-row{
+    margin-top: 50px;
   }
 }

@@ -4,3 +4,13 @@ body{
 nav{
   box-shadow: none;
 }
+.no-padding{
+  padding:0;
+}
+.input-field label {
+  font-weight: bold;
+  text-transform: uppercase;
+  @media (max-width: 568px) {
+    left: 0;
+  }
+}
