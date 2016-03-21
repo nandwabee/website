@@ -10262,10 +10262,16 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 body {
   font-family: Roboto; }
 
+nav {
+  box-shadow: none; }
+
 .welcome-row {
-  margin-top: 200px; }
+  margin-top: 160px; }
   .welcome-row .title {
     font-size: 60px;
     font-weight: 200; }
+
+.hire-me-button {
+  font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */

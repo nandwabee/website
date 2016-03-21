@@ -12,6 +12,15 @@
         {!! Analytics::render() !!}
     </head>
     <body class="grey darken-4" id="frontpage">
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <ul class="right">
+                        <li><a href="" class="hire-me-button">HIRE ME</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <div class="container">
             <div class="row welcome-row">
                 <div class="title white-text">Bernard Nandwa</div>
