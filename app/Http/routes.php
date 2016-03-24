@@ -30,4 +30,15 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('hireme',[
         'uses' => 'ContactController@hire_me'
     ]);
+
+    //Blogs.
+    Route::get('blogs',[
+        'uses' => 'Blog\BlogController@index',
+        'middleware' => []
+    ]);
+
+    Route::post('blogs',[
+        'uses' => 'Blog\BlogController@store',
+        'middleware' => ['auth']
+    ]);
 });
