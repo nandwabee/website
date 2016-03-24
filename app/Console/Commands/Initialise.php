@@ -2,24 +2,24 @@
 
 namespace App\Console\Commands;
 
+use Bernard\System\SystemInit;
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Inspiring;
 
-class Inspire extends Command
+class Initialise extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'inspire';
+    protected $signature = 'initialise';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Display an inspiring quote';
+    protected $description = 'Initialise the website';
 
     /**
      * Execute the console command.
@@ -28,6 +28,8 @@ class Inspire extends Command
      */
     public function handle()
     {
-        $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
+        $init = new SystemInit();
+
+        $init->create_root_user();
     }
 }

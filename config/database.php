@@ -65,6 +65,15 @@ return [
             'engine'    => null,
         ],
 
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => env('DB_HOST','localhost'),
+            'port'     => 27017,
+            'username' => '',
+            'password' => '',
+            'database' => env('DB_DATABASE'),
+        ],
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),

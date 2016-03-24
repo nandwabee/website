@@ -29,4 +29,6 @@ elixir(function(mix) {
         ],
         'public/js/frontend.js'
     );
+
+    mix.phpUnit()
 });
