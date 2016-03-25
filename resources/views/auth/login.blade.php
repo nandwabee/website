@@ -67,6 +67,6 @@
     </div>
 </div>
 
-<script src="/js/app.js"></script>
+<script src="/js/frontend.js"></script>
 </body>
 </html>

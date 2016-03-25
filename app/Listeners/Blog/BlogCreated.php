@@ -37,6 +37,7 @@ class BlogCreated
             $blog->nid = 1;
         }
 
+        $blog->status = 0;
         $blog->save();
 
     }

@@ -6,4 +6,6 @@ use Jenssegers\Mongodb\Model;
 
 class Blog extends Model{
     protected $collection = 'blogs';
+
+    protected $fillable = ['title'];
 }

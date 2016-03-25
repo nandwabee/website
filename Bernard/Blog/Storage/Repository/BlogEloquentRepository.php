@@ -42,4 +42,28 @@ class BlogEloquentRepository{
 
         return $blog;
     }
+
+    /**
+     * Get a paginated list of articles for the unauthenticated users.
+     *
+     */
+    public function find_published_articles(){
+        $articles = Blog::where('status',1)
+            ->orderBy('published_at','desc')
+            ->paginate(15);
+
+        return $articles;
+    }
+
+    /**
+     * Get a paginated list of all articles for the admin.
+     *
+     * @todo segment the published and unpublished articles more cleanly.
+     */
+    public function find_articles_for_admin(){
+        $articles = Blog::orderBy('created_at','desc')
+            ->paginate(15);
+
+        return $articles;
+    }
 }
