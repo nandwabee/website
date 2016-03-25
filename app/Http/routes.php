@@ -31,10 +31,28 @@ Route::group(['middleware' => ['web']], function () {
         'uses' => 'ContactController@hire_me'
     ]);
 
+    //Auth
+    Route::get('login',[
+        'uses' => 'Auth\AuthController@getLogin',
+        'middleware' => ['guest']
+    ]);
+
+    Route::post('login',[
+        'uses' => 'Auth\AuthController@postLogin',
+        'middleware' => ['guest']
+    ]);
+
+    Route::get('logout', 'Auth\AuthController@logout');
+
     //Blogs.
     Route::get('blogs',[
         'uses' => 'Blog\BlogController@index',
         'middleware' => []
+    ]);
+
+    Route::get('blogs/new',[
+        'uses' => 'Blog\BlogController@create',
+        'middleware' => ['auth']
     ]);
 
     Route::post('blogs',[

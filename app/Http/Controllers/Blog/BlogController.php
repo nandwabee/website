@@ -1,5 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Blog;
 
+use App\Http\Controllers\Controller;
 use Bernard\Blog\Storage\Repository\BlogEloquentRepository;
 use Illuminate\Http\Request;
 
@@ -19,5 +20,9 @@ class BlogController extends Controller{
         $blog = $this->repo->store($request);
 
         return redirect('/blogs');
+    }
+
+    public function create(){
+        return view('blogs.create');
     }
 }
