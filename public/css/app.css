@@ -10259,8 +10259,34 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
+@font-face {
+  font-family: 'Orkney Regular';
+  src: url("/fonts/orkney/orkney-regular-webfont.eot");
+  src: url("/fonts/orkney/orkney-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/orkney/orkney-regular-webfont.woff2") format("woff2"), url("/fonts/orkney/orkney-regular-webfont.woff") format("woff"), url("/fonts/orkney/orkney-regular-webfont.ttf") format("truetype"), url("/fonts/orkney/orkney-regular-webfont.svg#svgOrkney") format("svg"); }
+
+@font-face {
+  font-family: 'Orkney';
+  src: url("/fonts/orkney/orkney-medium-webfont.eot");
+  src: url("/fonts/orkney/orkney-medium-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/orkney/orkney-medium-webfont.woff2") format("woff2"), url("/fonts/orkney/orkney-medium-webfont.woff") format("woff"), url("/fonts/orkney/orkney-medium-webfont.ttf") format("truetype"), url("/fonts/orkney/orkney-medium-webfont.svg#svgOrkney") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Orkney';
+  src: url("/fonts/orkney/orkney-light-webfont.eot");
+  src: url("/fonts/orkney/orkney-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/orkney/orkney-light-webfont.woff2") format("woff2"), url("/fonts/orkney/orkney-light-webfont.woff") format("woff"), url("/fonts/orkney/orkney-light-webfont.ttf") format("truetype"), url("/fonts/orkney/orkney-light-webfont.svg#svgOrkney") format("svg");
+  font-weight: light;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Orkney';
+  src: url("/fonts/orkney/orkney-bold-webfont.eot");
+  src: url("/fonts/orkney/orkney-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/orkney/orkney-bold-webfont.woff2") format("woff2"), url("/fonts/orkney/orkney-bold-webfont.woff") format("woff"), url("/fonts/orkney/orkney-bold-webfont.ttf") format("truetype"), url("/fonts/orkney/orkney-bold-webfont.svg#svgOrkney") format("svg");
+  font-weight: bolder;
+  font-style: normal; }
+
 body {
-  font-family: Roboto; }
+  font-family: 'Orkney',Roboto,sans-serif; }
 
 nav {
   box-shadow: none; }
@@ -10281,6 +10307,8 @@ nav {
   .welcome-row .title {
     font-size: 60px;
     font-weight: 200; }
+  .welcome-row .welcome-text p {
+    font-family: "Orkney Regular",Roboto,sans-serif; }
 
 #hire-me h5 {
   margin-bottom: 35px !important;
@@ -10306,8 +10334,5 @@ nav {
 
 #hire-me .email-button-row {
   margin-top: 50px; }
-
-.hire-me-button {
-  font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */

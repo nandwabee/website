@@ -45,9 +45,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-//        if(!($e instanceof HttpException)) {
-//            return response()->view('errors.500');
-//        }
+        if(!($e instanceof HttpException)) {
+            return response()->view('errors.500');
+        }
 
         return parent::render($request, $e);
     }

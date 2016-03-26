@@ -1,5 +1,48 @@
+@font-face {
+  font-family: 'Orkney Regular';
+  src: url('/fonts/orkney/orkney-regular-webfont.eot');
+  src: url('/fonts/orkney/orkney-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/orkney/orkney-regular-webfont.woff2') format('woff2'),
+  url('/fonts/orkney/orkney-regular-webfont.woff') format('woff'),
+  url('/fonts/orkney/orkney-regular-webfont.ttf')  format('truetype'),
+  url('/fonts/orkney/orkney-regular-webfont.svg#svgOrkney') format('svg');
+}
+@font-face {
+  font-family: 'Orkney';
+  src: url('/fonts/orkney/orkney-medium-webfont.eot');
+  src: url('/fonts/orkney/orkney-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/orkney/orkney-medium-webfont.woff2') format('woff2'),
+  url('/fonts/orkney/orkney-medium-webfont.woff') format('woff'),
+  url('/fonts/orkney/orkney-medium-webfont.ttf')  format('truetype'),
+  url('/fonts/orkney/orkney-medium-webfont.svg#svgOrkney') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Orkney';
+  src: url('/fonts/orkney/orkney-light-webfont.eot');
+  src: url('/fonts/orkney/orkney-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/orkney/orkney-light-webfont.woff2') format('woff2'),
+  url('/fonts/orkney/orkney-light-webfont.woff') format('woff'),
+  url('/fonts/orkney/orkney-light-webfont.ttf')  format('truetype'),
+  url('/fonts/orkney/orkney-light-webfont.svg#svgOrkney') format('svg');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orkney';
+  src: url('/fonts/orkney/orkney-bold-webfont.eot');
+  src: url('/fonts/orkney/orkney-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/orkney/orkney-bold-webfont.woff2') format('woff2'),
+  url('/fonts/orkney/orkney-bold-webfont.woff') format('woff'),
+  url('/fonts/orkney/orkney-bold-webfont.ttf')  format('truetype'),
+  url('/fonts/orkney/orkney-bold-webfont.svg#svgOrkney') format('svg');
+  font-weight: bolder;
+  font-style: normal;
+}
 body{
-  font-family: Roboto;
+  font-family: 'Orkney',Roboto,sans-serif;
 }
 nav{
   box-shadow: none;
