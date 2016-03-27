@@ -58,6 +58,22 @@ class BlogController extends Controller{
     public function show($id){
         $blog = $this->repo->find_by_id((int)$id);
 
+        if($blog){
+            if($blog->status == 0){
+                if(auth()->guest()){
+                    abort(403);
+                }
+                else{
+                    if(!auth()->user()->is_admin){
+                        abort(403);
+                    }
+                }
+            }
+        }
+        else{
+            abort('404');
+        }
+
         return view('blogs.show')->with(['blog' => $blog]);
     }
 }
