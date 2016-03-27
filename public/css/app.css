@@ -10335,4 +10335,11 @@ nav {
 #hire-me .email-button-row {
   margin-top: 50px; }
 
+.blog-header {
+  min-height: 250px; }
+  .blog-header .blog-title {
+    padding-top: 50px;
+    font-size: 45px;
+    font-family: Orkney Regular; }
+
 /*# sourceMappingURL=app.css.map */

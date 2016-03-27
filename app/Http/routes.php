@@ -50,6 +50,11 @@ Route::group(['middleware' => ['web']], function () {
         'middleware' => []
     ]);
 
+    Route::get('blog/{id}',[
+        'uses' => 'Blog\BlogController@show',
+        'middleware' => []
+    ]);
+
     Route::get('blogs/new',[
         'uses' => 'Blog\BlogController@create',
         'middleware' => ['auth']

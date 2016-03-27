@@ -16,6 +16,7 @@
         <nav class="grey darken-4">
             <div class="nav-wrapper">
                 <div class="container">
+                    <a href="/" class="brand-logo">Bernard Nandwa</a>
                     <ul class="right">
                         <li><a href="/#hire-me" class="hire-me-button">HIRE ME</a></li>
                     </ul>

@@ -48,4 +48,16 @@ class BlogController extends Controller{
 
         return view('blogs.index')->with($data);
     }
+
+    /**
+     * Display an article.
+     *
+     * @param $id int
+     * @return $this
+     */
+    public function show($id){
+        $blog = $this->repo->find_by_id((int)$id);
+
+        return view('blogs.show')->with(['blog' => $blog]);
+    }
 }
