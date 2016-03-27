@@ -10342,4 +10342,8 @@ nav {
     font-size: 45px;
     font-family: Orkney Regular; }
 
+.edit-btn {
+  float: right;
+  margin-top: -30px; }
+
 /*# sourceMappingURL=app.css.map */
