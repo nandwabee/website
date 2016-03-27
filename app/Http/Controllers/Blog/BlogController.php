@@ -61,11 +61,11 @@ class BlogController extends Controller{
         if($blog){
             if($blog->status == 0){
                 if(auth()->guest()){
-                    abort(403);
+                    return redirect('/blogs');
                 }
                 else{
                     if(!auth()->user()->is_admin){
-                        abort(403);
+                        return redirect('/blogs');
                     }
                 }
             }
@@ -75,5 +75,56 @@ class BlogController extends Controller{
         }
 
         return view('blogs.show')->with(['blog' => $blog]);
+    }
+
+    /**
+     * Display the article edit form.
+     *
+     * @param $id
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function edit($id){
+        if(auth()->user()->is_admin){
+            $blog = $this->repo->find_by_id((int)$id);
+
+            return view('blogs.edit')->with(['blog' => $blog]);
+        }
+
+        return redirect('/blog/' . $id);
+    }
+
+    public function update(Request $request,$id){
+        if(auth()->user()->is_admin){
+            $blog = $this->repo->find_by_id((int)$id);
+
+            if($blog){
+                $blog->title = $request->title;
+                $blog->secondary_title = $request->secondary_title;
+                $blog->body = $request->body;
+                $blog->save();
+            }
+        }
+
+        return redirect('/blog/' . $id);
+    }
+
+    /**
+     * Publish an article.
+     *
+     * @param $id int
+     * 
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function publish($id){
+        if(auth()->user()->is_admin){
+            $blog = $this->repo->find_by_id((int)$id);
+
+            if($blog){
+                $blog->status = 1;
+                $blog->save();
+            }
+        }
+
+        return redirect('/blog/' . $id);
     }
 }
