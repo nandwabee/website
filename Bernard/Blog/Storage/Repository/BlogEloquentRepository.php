@@ -66,4 +66,28 @@ class BlogEloquentRepository{
 
         return $articles;
     }
+
+    /**
+     * Publish/Unpublish a single article
+     */
+    public function publish($id){
+        $blog = $this->repo->find_by_id((int)$id);
+
+        if($blog){
+
+            if($blog->status == 1){
+                $blog->status = 0;
+                $blog->unpublished_at = new \MongoDate(time());
+            }
+            else{
+                $blog->status = 1;
+                $blog->published_at = new \MongoDate(time());
+            }
+
+            $blog->save();
+        }
+
+        //Fire an event here
+    }
+
 }

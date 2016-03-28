@@ -116,13 +116,11 @@ class BlogController extends Controller{
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function publish($id){
-        if(auth()->user()->is_admin){
-            $blog = $this->repo->find_by_id((int)$id);
 
-            if($blog){
-                $blog->status = 1;
-                $blog->save();
-            }
+        if(auth()->user()->is_admin){
+
+            $this->repo->publish($id);
+
         }
 
         return redirect('/blog/' . $id);
