@@ -112,7 +112,7 @@ class BlogController extends Controller{
      * Publish an article.
      *
      * @param $id int
-     * 
+     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function publish($id){
