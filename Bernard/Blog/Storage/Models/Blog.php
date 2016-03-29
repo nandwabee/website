@@ -10,4 +10,14 @@ class Blog extends Model{
     protected $fillable = [
         'title','secondary_title','body'
     ];
+
+    public function getBodyAttribute($value){
+        if($value){
+            $Parse = new \Parsedown();
+
+            return $Parse->text($value);
+        }
+
+        return $value;
+    }
 }
