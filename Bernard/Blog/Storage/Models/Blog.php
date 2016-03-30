@@ -11,6 +11,12 @@ class Blog extends Model{
         'title','secondary_title','body'
     ];
 
+    /**
+     * Format the body of the blog.
+     *
+     * @param $value
+     * @return string
+     */
     public function getBodyAttribute($value){
         if($value){
             $Parse = new \Parsedown();

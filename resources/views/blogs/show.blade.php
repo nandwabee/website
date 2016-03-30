@@ -20,6 +20,12 @@
             <div class="blog-numbers">
                 Published at
             </div>
+
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    {!! $blog->body !!}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
