@@ -3,7 +3,8 @@
 use App\Events\Blog\BlogWasCreated;
 use Bernard\Blog\Storage\Models\Blog;
 
-class BlogEloquentRepository{
+class BlogEloquentRepository
+{
     /**
      * Store a single blog post.
      *
@@ -11,7 +12,8 @@ class BlogEloquentRepository{
      *
      * @return \Bernard\Blog\Storage\Models\Blog
      */
-    public function store($payload){
+    public function store($payload)
+    {
         $blog = Blog::create($payload);
 
         event(new BlogWasCreated($blog));
@@ -24,8 +26,9 @@ class BlogEloquentRepository{
      *
      * @param $unique_id int The nid of the article.
      */
-    public function find_by_id($unique_id){
-        $blog = Blog::where('nid',$unique_id)
+    public function find_by_id($unique_id)
+    {
+        $blog = Blog::where('nid', $unique_id)
             ->first();
 
         return $blog;
@@ -36,8 +39,23 @@ class BlogEloquentRepository{
      *
      * @return mixed
      */
-    public function find_latest_blog(){
-        $blog = Blog::orderBy('nid','desc')
+    public function find_latest_blog()
+    {
+        $blog = Blog::orderBy('nid', 'desc')
+            ->first();
+
+        return $blog;
+    }
+
+    /**
+     * Get the latest published blog.
+     *
+     * @return mixed
+     */
+    public function find_latest_published_blog()
+    {
+        $blog = Blog::where('status', 1)
+            ->orderBy('published_at', 'desc')
             ->first();
 
         return $blog;
@@ -47,9 +65,10 @@ class BlogEloquentRepository{
      * Get a paginated list of articles for the unauthenticated users.
      *
      */
-    public function find_published_articles(){
-        $articles = Blog::where('status',1)
-            ->orderBy('published_at','desc')
+    public function find_published_articles()
+    {
+        $articles = Blog::where('status', 1)
+            ->orderBy('published_at', 'desc')
             ->paginate(15);
 
         return $articles;
@@ -60,8 +79,9 @@ class BlogEloquentRepository{
      *
      * @todo segment the published and unpublished articles more cleanly.
      */
-    public function find_articles_for_admin(){
-        $articles = Blog::orderBy('created_at','desc')
+    public function find_articles_for_admin()
+    {
+        $articles = Blog::orderBy('created_at', 'desc')
             ->paginate(15);
 
         return $articles;
@@ -70,16 +90,16 @@ class BlogEloquentRepository{
     /**
      * Publish/Unpublish a single article
      */
-    public function publish($id){
+    public function publish($id)
+    {
         $blog = $this->repo->find_by_id((int)$id);
 
-        if($blog){
+        if ($blog) {
 
-            if($blog->status == 1){
+            if ($blog->status == 1) {
                 $blog->status = 0;
                 $blog->unpublished_at = new \MongoDate(time());
-            }
-            else{
+            } else {
                 $blog->status = 1;
                 $blog->published_at = new \MongoDate(time());
             }
