@@ -10339,15 +10339,34 @@ nav {
   margin-top: 50px; }
 
 .blog-header {
-  min-height: 250px; }
+  min-height: 350px; }
+  @media all and (max-width: 600px) {
+    .blog-header {
+      min-height: 250px; } }
   .blog-header .blog-title {
     padding-top: 50px;
     font-size: 45px;
     font-family: Orkney Regular; }
 
 .edit-btn {
-  float: right;
-  margin-top: -30px; }
+  margin-top: -6px;
+  margin-right: 30px; }
+
+.publish-btn {
+  margin-top: -6px; }
+
+.blog-numbers {
+  border-bottom: 1px solid #ccc;
+  height: 50px;
+  margin-bottom: 10px;
+  padding-top: 10px; }
+
+.section-title {
+  font-family: Orkney Regular;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 20px;
+  font-weight: bold; }
 
 @media all and (max-width: 600px) {
   .nav-wrapper .container {

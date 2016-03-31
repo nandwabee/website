@@ -26,4 +26,27 @@ class Blog extends Model{
 
         return $value;
     }
+
+    /**
+     * Format the post date of an article.
+     *
+     * @param $value
+     * @return mixed
+     */
+    public function getCreatedAtAttribute($value){
+        return date('d F Y',$value->sec);
+    }
+
+    /**
+     * Format the publishing date.
+     *
+     * @param $value
+     * @return bool|string
+     */
+    public function getPublishedAtAttribute($value){
+        if($value){
+            return date('d F Y',$value->sec);
+        }
+        return $value;
+    }
 }

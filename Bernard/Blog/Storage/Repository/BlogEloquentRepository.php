@@ -92,7 +92,7 @@ class BlogEloquentRepository
      */
     public function publish($id)
     {
-        $blog = $this->repo->find_by_id((int)$id);
+        $blog = $this->find_by_id((int)$id);
 
         if ($blog) {
 
@@ -101,7 +101,10 @@ class BlogEloquentRepository
                 $blog->unpublished_at = new \MongoDate(time());
             } else {
                 $blog->status = 1;
-                $blog->published_at = new \MongoDate(time());
+
+                if(!$blog->published_at){
+                    $blog->published_at = new \MongoDate(time());
+                }
             }
 
             $blog->save();
